@@ -2,13 +2,14 @@
 * { box-sizing: border-box; }
 
 :root {
-  --purple-light-1: #FBFAFB;
-  --purple-light-2: #EEEAF2;
-  --purple-medium-1: #AA83C8;
-  --purple-medium-2: #8B48BF;
-  --purple-medium-3: #5C218A;
-  --purple-dark-1: #3E0F64;
-  --purple-dark-2: #2A0646;
+  --green-light-1: #FBFAFB;
+  --green-light-2: #EEEAF2;
+  --green-medium-1: #c9ffe2;
+  --green-medium-2: #b6f9c9;
+  --green-medium-3: #96e8bc;
+  --green-dark-1: #7dd181;
+  --green-dark-2: #4b7f52;
+  --green-dark-3: #01110a;
 
   --yellow: #EECC75;
   --green: #CAD297;
@@ -23,18 +24,20 @@
   --font-weight-title2: 700;
   --font-weight-text1: 400;
   --font-weight-text2: 500;
+
+  font-size: 62.5%;
 }
 
 html {
-  background-color: var(--purple-medium-3);
+  background-color: var(--green-medium-3);
 }
 
 body {
-  background-color: var(--purple-light-1);
-  color: var(--purple-dark-2);
+  background-color: var(--green-light-1);
+  color: var(--green-dark-2);
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-text1);
-  font-size: 16px;
+  font-size: 1.6rem;
   margin: 4px 0 0 0;
   padding: 0;
 }
@@ -45,8 +48,8 @@ h1, h2, h3 {
 }
 
 h1, h2 {
-  font-size: 24px;
-  color: var(--purple-dark-2);
+  font-size: 2.4rem;
+  color: var(--green-dark-2);
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-title1);
   margin: 0;
@@ -54,36 +57,36 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 18px;
-  color: var(--purple-dark-1);
+  font-size: 1.8rem;
+  color: var(--green-dark-1);
   font-weight: var(--font-weight-title2);
 }
 
 h3 {
-  color: var(--purple-dark-2);
+  color: var(--green-dark-2);
   font-weight: var(--font-weight-text2);
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 input {
-  background-color: var(--purple-light-2);
-  color: var(--purple-medium-2);
+  background-color: var(--green-light-2);
+  color: var(--green-medium-2);
   border: none;
-  font-size: 18px;
+  font-size: 1.8rem;
   padding-left: 16px;
 }
 
 input::placeholder {
-  color: var(--purple-medium-1);
+  color: var(--green-dark-3);
   font-family: var(--font-family-text);
 }
 
 button {
-  background-color: var(--purple-dark-1);
+  background-color: var(--green-dark-1);
   border: none;
-  color: var(--purple-light-2);
+  color: var(--green-light-2);
   font-weight: var(--font-weight-text2);
-  font-size: 14px;
+  font-size: 1.4rem;
   cursor: pointer;
 }
 
@@ -143,13 +146,13 @@ button {
 
 .header-arrow {
   font-weight: var(--font-weight-text2);
-  font-size: 36px;
+  font-size: 3.6rem;
   margin-bottom: 16px;
   cursor: pointer;
   display: inline-block;
 }
 .header-arrow--white {
-  color: var(--purple-light-1);
+  color: var(--green-light-1);
 }
 
 .header-searchForm {
@@ -173,7 +176,6 @@ button {
   border-bottom-right-radius: 8px;
 }
 
-
 /* Trending */
 .trendingPreview-header {
   display: flex;
@@ -183,7 +185,7 @@ button {
 
 .trendingPreview-btn {
   border-radius: 8px;
-  height: 32px;
+  height: 40px;
   width: 72px;
 }
 
@@ -239,15 +241,15 @@ button {
 #id16 { --idColor: var(--green); }
 #id35 { --idColor: var(--lightBlue); }
 #id80 { --idColor: var(--darkBlue); }
-#id99 { --idColor: var(--purple-dark-1); }
-#id18 { --idColor: var(--purple-medium-1); }
+#id99 { --idColor: var(--green-dark-1); }
+#id18 { --idColor: var(--green-medium-1); }
 #id10751 { --idColor: var(--yellow); }
 #id14 { --idColor: var(--red); }
 #id36 { --idColor: var(--green); }
 #id27 { --idColor: var(--lightBlue); }
 #id10402 { --idColor: var(--darkBlue); }
-#id9648 { --idColor: var(--purple-dark-1); }
-#id10749 { --idColor: var(--purple-medium-1); }
+#id9648 { --idColor: var(--green-dark-1); }
+#id10749 { --idColor: var(--green-medium-1); }
 #id878 { --idColor: var(--yellow); }
 #id10770 { --idColor: var(--red); }
 #id53 { --idColor: var(--green); }
@@ -282,7 +284,7 @@ button {
   margin-top: 403px;
   z-index: 1;
   position: absolute;
-  background-color: var(--purple-light-1);
+  background-color: var(--green-light-1);
 }
 
 .movieDetail-title {
@@ -343,13 +345,20 @@ button {
 
 /* Footer */
 footer {
-  background-color: var(--purple-medium-3);
-  color: var(--purple-light-2);
+  background-color: var(--green-medium-3);
+  color: var(--green-light-2);
   text-align: center;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer p {
+  color: var(--green-dark-3);
+  font-size: 2rem;
+  font-family: var(--font-family-titles);
+  font-weight: var(--font-weight-text2);
 }
 
 
