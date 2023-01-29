@@ -236,25 +236,25 @@ button {
   width: 8px;
   height: 8px;
 }
-#id28 { --idColor: var(--yellow); }
-#id12 { --idColor: var(--red); }
-#id16 { --idColor: var(--green); }
-#id35 { --idColor: var(--lightBlue); }
-#id80 { --idColor: var(--darkBlue); }
-#id99 { --idColor: var(--green-dark-1); }
+#id28 { --idColor: #fb8500; }
+#id12 { --idColor: #dda15e; }
+#id16 { --idColor: #e76f51; }
+#id35 { --idColor: #283618; }
+#id80 { --idColor: #8ecae6; }
+#id99 { --idColor: #8d99ae; }
 #id18 { --idColor: var(--green-medium-1); }
-#id10751 { --idColor: var(--yellow); }
-#id14 { --idColor: var(--red); }
+#id10751 { --idColor: #ffb703; }
+#id14 { --idColor: #e63946; }
 #id36 { --idColor: var(--green); }
-#id27 { --idColor: var(--lightBlue); }
-#id10402 { --idColor: var(--darkBlue); }
-#id9648 { --idColor: var(--green-dark-1); }
-#id10749 { --idColor: var(--green-medium-1); }
-#id878 { --idColor: var(--yellow); }
-#id10770 { --idColor: var(--red); }
-#id53 { --idColor: var(--green); }
-#id10752 { --idColor: var(--lightBlue); }
-#id37 { --idColor: var(--darkBlue); }
+#id27 { --idColor: #a9def9; }
+#id10402 { --idColor: #582f0e; }
+#id9648 { --idColor: #ff4d6d; }
+#id10749 { --idColor: #e09f3e; }
+#id878 { --idColor: #023047; }
+#id10770 { --idColor: #9b2226; }
+#id53 { --idColor: #00f5d4; }
+#id10752 { --idColor: #219ebc; }
+#id37 { --idColor: #463f3a; }
 
 
 /* Generic List (search, trending & category) */
