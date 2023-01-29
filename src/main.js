@@ -25,8 +25,6 @@ async function getTrendingMoviesPreview() {
 
         movieContainer.appendChild(movieImg);
         mainMoviesContainer.appendChild(movieContainer);
-
-        console.log(mainMoviesContainer);
     })
 }
 
@@ -51,6 +49,3 @@ async function getCategoriesPreview() {
 
     })
 }
-
-getTrendingMoviesPreview();
-getCategoriesPreview();
