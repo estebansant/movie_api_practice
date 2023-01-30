@@ -10,6 +10,11 @@ arrowButton.addEventListener('click', () => {
     location.hash = '#home';
 })
 
+// Scrolling to top
+function scroll(){
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+};
 
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
@@ -44,6 +49,8 @@ function trendsPage () {
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    scroll();
 }
 
 function searchPage () {
@@ -60,6 +67,8 @@ function searchPage () {
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    scroll();
 }
 
 function moviePage () {
@@ -76,6 +85,8 @@ function moviePage () {
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
+
+    scroll();
 }
 
 function categoryPage () {
@@ -93,6 +104,16 @@ function categoryPage () {
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 
+    // [#category, id-name]
+    const [categoryHash, categoryInfo] = location.hash.split("=");
+    // [id, name]
+    const [categoryId, categoryName] = categoryInfo.split("-");
+    const newCategoryName = decodeURI(categoryName);
+
+    headerGenresTitle.innerText = newCategoryName;
+    getMoviesByCategory(categoryId);
+
+    scroll();
 }
 
 function homePage () {
@@ -112,4 +133,5 @@ function homePage () {
 
     getTrendingMoviesPreview();
     getCategoriesPreview();
+    scroll();
 }
