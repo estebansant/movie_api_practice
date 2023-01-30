@@ -35,6 +35,8 @@ function categoryPage () {
 
 function homePage () {
     console.log('Home');
+
+    headerSection.classList.remove('header__container--long');
     getTrendingMoviesPreview();
     getCategoriesPreview();
 }

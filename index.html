@@ -11,115 +11,101 @@
   <title>Another Movie App</title>
 </head>
 <body>
-  <header id="header" class="header-container">
-    <span class="header-arrow inactive">&lt;</span>
-    <h1 class="header-title">Another Movie App</h1>
-    <h1 class="header-title header-title--categoryView inactive">Action</h1>
+  <header id="header" class="header__container">
+    <span class="header__arrow inactive">&lt;</span>
+    <h1 class="header__title">Another Movie App</h1>
+    <h1 class="header__title header__title--categoryView inactive">Action</h1>
 
-    <form id="searchForm" class="header-searchForm">
+    <form id="searchForm" class="header__searchForm">
       <input type="text" placeholder="Vengadores" />
       <button>🔍</button>
     </form>
   </header>
 
-  <section id="trendingPreview" class="trendingPreview-container">
-    <div class="trendingPreview-header">
-      <h2 class="trendingPreview-title">Trending</h2>
-      <button class="trendingPreview-btn">See more</button>
+  <section id="trendingPreview" class="trendingPreview__container">
+    <div class="trendingPreview__header">
+      <h2 class="trendingPreview__title">Trending</h2>
+      <button class="trendingPreview__button">See more</button>
     </div>
 
-    <article class="trendingPreview-movieList">
-      <!-- <div class="movie-container">
+    <article class="trendingPreview__movieList">
+      <!-- <div class="movie__container">
         <img
           src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-          class="movie-img"
+          class="movie__container--img"
           alt="Nombre de la película"
         />
       </div> -->
     </article>
   </section>
 
-  <section id="categoriesPreview" class="categoriesPreview-container">
-    <h2 class="categoriesPreview-title">Categories</h2>
+  <section id="categoriesPreview" class="categoriesPreview__container">
+    <h2 class="categoriesPreview__title">Categories</h2>
 
-    <article class="categoriesPreview-list">
-      <!-- <div class="category-container">
-        <h3 id="id28" class="category-title">Romance</h3>
+    <article class="categoriesPreview__list">
+      <!-- <div class="category__container">
+        <h3 id="id28" class="category__title">Romance</h3>
       </div> -->
     </article>
   </section>
 
-  <section id="genericList" class="genericList-container inactive">
-    <div class="movie-container">
+  <section id="genericList" class="genericList__container inactive">
+    <div class="movie__container">
       <img
         src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
+        class="movie__container--img"
         alt="Name of the movie"
       />
     </div>
 
-    <div class="movie-container">
+    <div class="movie__container">
       <img
         src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
+        class="movie__container--img"
         alt="Name of the movie"
       />
     </div>
 
-    <div class="movie-container">
+    <div class="movie__container">
       <img
         src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
+        class="movie__container--img"
         alt="Name of the movie"
       />
     </div>
   </section>
 
-  <section id="movieDetail" class="movieDetail-container inactive">
-    <h1 class="movieDetail-title">Deadpool</h1>
-    <span class="movieDetail-score">7.6</span>
-    <p class="movieDetail-description">
+  <section id="movieDetail" class="movieDetail__container inactive">
+    <h1 class="movieDetail__title">Deadpool</h1>
+    <span class="movieDetail__score">7.6</span>
+    <p class="movieDetail__description">
       Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.
     </p>
 
-    <!-- <article class="categories-list">
-      <div class="category-container">
-        <h3 id="id28" class="category-title">Romance</h3>
-      </div>
+    <article class="relatedMovies__container">
+      <h2 class="relatedMovies__title">Related Movies</h2>
 
-      <div class="category-container">
-        <h3 id="id16" class="category-title">Drama</h3>
-      </div>
-
-      <div class="category-container">
-        <h3 id="id14" class="category-title">Action</h3>
-      </div>
-    </article> -->
-
-    <article class="relatedMovies-container">
-      <h2 class="relatedMovies-title">Related Movies</h2>
-
-      <div class="relatedMovies-scrollContainer">
-        <div class="movie-container">
+      <div class="relatedMovies__scrollContainer">
+        <div class="movie__container">
           <img
             src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
+            class="movie__container--img"
             alt="Name of the movie"
           />
         </div>
         
-        <div class="movie-container">
+        <div class="movie__container">
           <img
             src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
+            class="movie__container--img"
             alt="Name of the movie"
           />
         </div>
         
-        <div class="movie-container">
+        <div class="movie__container">
           <img
             src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
+            class="movie__container--img"
             alt="Name of the movie"
           />
         </div>
@@ -133,6 +119,7 @@
   
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./src/secrets.js"></script>
+  <script src="./src/nodes.js"></script>
   <script src="./src/main.js"></script>
   <script src="./src/navigation.js"></script>
 </body>

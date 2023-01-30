@@ -92,27 +92,27 @@ button {
 
 
 /* Shared */
-.header-container, .trendingPreview-header, .categoriesPreview-container {
+.header__container, .trendingPreview__header, .categoriesPreview__container {
   padding: 0 24px;
 }
 
-.trendingPreview-container, .categoriesPreview-container, footer {
+.trendingPreview__container, .categoriesPreview__container, footer {
   margin-top: 48px;
 }
 
-.trendingPreview-header, .categoriesPreview-title {
+.trendingPreview__header, .categoriesPreview__title {
   margin-bottom: 24px;
 }
 
-.movie-container {
+.movie__container {
   cursor: pointer;
 }
 
-.movie-img {
+.movie__img {
   border-radius: 8px;
 }
 
-.categoriesPreview-list, .categories-list {
+.categoriesPreview__list, .categories__list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -122,11 +122,11 @@ button {
 
 
 /* Header */
-.header-container {
+.header__container {
   padding-top: 40px;
 }
 
-.header-container--long {
+.header__container--long {
   background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
   background-size: cover !important;
@@ -136,26 +136,26 @@ button {
   width: 100%;
 }
 
-.header-container--categoryView {
+.header__container--categoryView {
   background: linear-gradient(180deg, rgba(238, 204, 117, 0.5) 0%, rgba(238, 204, 117, 0) 72.92%);
 } 
 
-.header-title {
+.header__title {
   margin-bottom: 16px;
 }
 
-.header-arrow {
+.header__arrow {
   font-weight: var(--font-weight-text2);
   font-size: 3.6rem;
   margin-bottom: 16px;
   cursor: pointer;
   display: inline-block;
 }
-.header-arrow--white {
+.header__arrow--white {
   color: var(--green-light-1);
 }
 
-.header-searchForm {
+.header__searchForm {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,13 +163,13 @@ button {
   flex-wrap: nowrap;
 }
 
-.header-searchForm input {
+.header__searchForm input {
   height: 48px;
   width: 100%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-.header-searchForm button {
+.header__searchForm button {
   width: 56px;
   height: 48px;
   border-top-right-radius: 8px;
@@ -177,19 +177,19 @@ button {
 }
 
 /* Trending */
-.trendingPreview-header {
+.trendingPreview__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.trendingPreview-btn {
+.trendingPreview__button {
   border-radius: 8px;
   height: 40px;
   width: 72px;
 }
 
-.trendingPreview-movieList {
+.trendingPreview__movieList {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -198,12 +198,12 @@ button {
   padding-bottom: 16px;
 }
 
-.trendingPreview-movieList .movie-container {
+.trendingPreview__movieList .movie__container {
   display: inline-block;
   margin-right: 8px;
 }
 
-.trendingPreview-movieList .movie-container .movie-img {
+.trendingPreview__movieList .movie__container .movie__container--img {
   height: 225px;
   min-height: 225px;
   max-height: 225px;
@@ -214,11 +214,11 @@ button {
 
 
 /* Categories */
-.category-container {
+.category__container {
   width: 45%;
 }
 
-.category-title {
+.category__title {
   margin-bottom: 8px;
   cursor: pointer;
   white-space: nowrap;
@@ -226,7 +226,7 @@ button {
   text-overflow: ellipsis;
 }
 
-.category-title::before {
+.category__title::before {
   content: '••••';
   color: transparent;
   /* TODO: cambiar color por ID de la categoría */
@@ -258,7 +258,7 @@ button {
 
 
 /* Generic List (search, trending & category) */
-.genericList-container {
+.genericList__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -266,18 +266,18 @@ button {
   padding: 32px 24px;
 }
 
-.genericList-container .movie-container {
+.genericList__container .movie__container {
   display: inline-block;
   width: 47.5%;
 }
 
-.genericList-container .movie-img {
+.genericList__container .movie__container--img {
   width: 100%;
 }
 
 
 /* Movie Detail */
-.movieDetail-container {
+.movieDetail__container {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   padding: 32px 24px;
@@ -287,39 +287,39 @@ button {
   background-color: var(--green-light-1);
 }
 
-.movieDetail-title {
+.movieDetail__title {
   display: inline-block;
   width: 80%;
   margin: 0 0 16px 0;
   padding: 0;
 }
 
-.movieDetail-score {
+.movieDetail__score {
   display: inline-block;
   text-align: right;
   width: 18%;
   font-weight: var(--font-weight-title2);
 }
-.movieDetail-score::before {
+.movieDetail__score::before {
   content: '★';
   color: var(--yellow);
   padding-right: 4px;
 }
 
-.movieDetail-description {
+.movieDetail__description {
   margin: 0 0 24px 0;
 }
 
-.relatedMovies-container {
+.relatedMovies__container {
   margin-top: 24px;
   height: 216px;
 }
 
-.relatedMovies-title {
+.relatedMovies__title {
   margin-bottom: 16px;
 }
 
-.relatedMovies-scrollContainer {
+.relatedMovies__scrollContainer {
   position: absolute;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -328,12 +328,12 @@ button {
   padding-bottom: 16px;
 }
 
-.relatedMovies-scrollContainer .movie-container {
+.relatedMovies__scrollContainer .movie__container {
   display: inline-block;
   margin-right: 8px;
 }
 
-.relatedMovies-scrollContainer .movie-img {
+.relatedMovies__scrollContainer .movie__container--img {
   width: 125px;
   min-width: 125px;
   max-width: 125px;
