@@ -168,6 +168,7 @@ button {
   width: 100%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  color: var(--green-dark-3)
 }
 .header__searchForm button {
   width: 56px;
