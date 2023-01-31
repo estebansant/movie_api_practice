@@ -49,6 +49,10 @@ function trendsPage () {
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 
+    headerGenresTitle.innerText = 'Trending';
+
+    getFullTrendingMovies();
+
     scroll();
 }
 
@@ -88,6 +92,10 @@ function moviePage () {
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
+
+    // [#movie, movieId]
+    const [movieHash, movieId] = location.hash.split("=");
+    getMovieInfo(movieId);
 
     scroll();
 }

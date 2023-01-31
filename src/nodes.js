@@ -10,7 +10,7 @@ const movieDetailSection=document.querySelector('#movieDetail');
 const searchForm=document.querySelector('#searchForm');
 const mainMoviesContainer=document.querySelector('.trendingPreview__movieList');
 const mainGenresContainer=document.querySelector('.categoriesPreview__list');
-const movieDetailCategoriesList=document.querySelector('#movieDetail .categories__list');
+const movieDetailGenresList=document.querySelector('#movieDetail .categories__list');
 const relatedMoviesContainer=document.querySelector('.relatedMovies__scrollContainer');
 
 // Elements
