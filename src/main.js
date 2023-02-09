@@ -9,7 +9,17 @@ const api = axios.create({
 });
 
 // Utils
-function displayMovies (movies, container) {
+
+const lazyLoader = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting){
+            const url = entry.target.getAttribute('data-src');
+            entry.target.setAttribute('src', url);
+        }
+    })
+});
+
+function displayMovies (movies, container, lazyLoad = false) {
     container.innerHTML = "";
 
     movies.forEach(item => {        
@@ -22,7 +32,14 @@ function displayMovies (movies, container) {
         const movieImg = document.createElement('img');
         movieImg.classList.add('movie__container--img');
         movieImg.setAttribute('alt', item.title);
-        movieImg.setAttribute('src', `https://image.tmdb.org/t/p/w300${item.poster_path}`);
+        movieImg.setAttribute(
+        lazyLoad ? 'data-src': 'src', 
+        `https://image.tmdb.org/t/p/w300${item.poster_path}`
+        );
+
+        if(lazyLoad){
+            lazyLoader.observe(movieImg)
+        };
 
         movieContainer.appendChild(movieImg);
         container.appendChild(movieContainer);
@@ -59,7 +76,7 @@ async function getTrendingMoviesPreview() {
     const movies = data.results;
 
     // Movies preview
-    displayMovies(movies, mainMoviesContainer)
+    displayMovies(movies, mainMoviesContainer, true)
 }
 
 async function getCategoriesPreview() {
@@ -68,6 +85,9 @@ async function getCategoriesPreview() {
 
     // Genres preview
     displayGenres(categories, mainGenresContainer);
+    let a = {y: 10};
+a.x = a
+console.log(JSON.stringify(a));
     
 }
 
