@@ -15,8 +15,8 @@ const lazyLoader = new IntersectionObserver((entries) => {
         if (entry.isIntersecting){
             const url = entry.target.getAttribute('data-src');
             entry.target.setAttribute('src', url);
-        }
-    })
+        };
+    });
 });
 
 function displayMovies (movies, container, lazyLoad = false) {
@@ -37,13 +37,17 @@ function displayMovies (movies, container, lazyLoad = false) {
         `https://image.tmdb.org/t/p/w300${item.poster_path}`
         );
 
+        movieImg.addEventListener('error', () => {
+            movieImg.setAttribute('src', './src/images/robot_error.png');
+          })
+
         if(lazyLoad){
-            lazyLoader.observe(movieImg)
+            lazyLoader.observe(movieImg);
         };
 
         movieContainer.appendChild(movieImg);
         container.appendChild(movieContainer);
-    });
+        });
 }
 
 function displayGenres (genres, container) {
@@ -76,19 +80,15 @@ async function getTrendingMoviesPreview() {
     const movies = data.results;
 
     // Movies preview
-    displayMovies(movies, mainMoviesContainer, true)
-}
+    displayMovies(movies, mainMoviesContainer, true);
+};
 
 async function getCategoriesPreview() {
     const {data} = await api ('/genre/movie/list');
     const categories = data.genres;
 
     // Genres preview
-    displayGenres(categories, mainGenresContainer);
-    let a = {y: 10};
-a.x = a
-console.log(JSON.stringify(a));
-    
+    displayGenres(categories, mainGenresContainer);    
 }
 
 async function getMoviesByCategory(id) {
