@@ -92,25 +92,60 @@ button {
 
 
 /* Shared */
-.header__container, .trendingPreview__header, .categoriesPreview__container {
+.header__container, .trendingPreview__header, .categoriesPreview__container, .liked__header {
   padding: 0 24px;
 }
 
-.trendingPreview__container, .categoriesPreview__container, footer {
+.trendingPreview__container, .categoriesPreview__container, footer, .liked__container {
   margin-top: 48px;
 }
 
-.trendingPreview__header, .categoriesPreview__title {
+.trendingPreview__header, .categoriesPreview__title, .liked__header {
   margin-bottom: 24px;
 }
 
 .movie__container {
   cursor: pointer;
+  position: relative;
 }
 
 .movie__img {
   border-radius: 12px;
   min-height: 175px;
+}
+
+.like__button{
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  padding: 0;
+  margin: 0;
+  z-index: 20;
+  transition: all 0.4s ease-in-out;
+}
+
+.like__button::before{
+  content: '🤍';
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.like__button--on{
+  background-color: var(--green-light-2);
+  box-shadow: 0px 0px 10px 2px var(--green-dark-1);
+}
+
+.like__button--on::before{
+  content: '💚';
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.like__button:hover{
+  cursor: pointer;
 }
 
 .categoriesPreview__list, .categories__list {
@@ -179,7 +214,7 @@ button {
 }
 
 /* Trending */
-.trendingPreview__header {
+.trendingPreview__header, .liked__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -191,7 +226,7 @@ button {
   width: 72px;
 }
 
-.trendingPreview__movieList {
+.trendingPreview__movieList, .liked__movieList {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -200,12 +235,14 @@ button {
   padding-bottom: 16px;
 }
 
-.trendingPreview__movieList .movie__container {
+.trendingPreview__movieList .movie__container,
+.liked__movieList .movie__container {
   display: inline-block;
   margin-right: 8px;
 }
 
-.trendingPreview__movieList .movie__container .movie__container--img {
+.trendingPreview__movieList .movie__container .movie__container--img,
+.liked__movieList .movie__container .movie__container--img {
   height: 225px;
   min-height: 225px;
   max-height: 225px;

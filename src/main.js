@@ -19,13 +19,7 @@ const lazyLoader = new IntersectionObserver((entries) => {
     });
 });
 
-function displayMovies (
-    movies,
-    container,
-    {
-        lazyLoad = false,
-        clean = true
-    }={},){
+function displayMovies (movies, container, { lazyLoad = false, clean = true }={}) {
 
     if (clean) {
         container.innerHTML = "";
@@ -34,10 +28,8 @@ function displayMovies (
     movies.forEach(item => {        
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie__container');
-        movieContainer.addEventListener('click', () => {
-            location.hash = "movie=" + item.id;
-        });
 
+        // Add content to movie card
         const movieImg = document.createElement('img');
         movieImg.classList.add('movie__container--img');
         movieImg.setAttribute('alt', item.title);
@@ -46,18 +38,32 @@ function displayMovies (
         `https://image.tmdb.org/t/p/w300${item.poster_path}`
         );
 
+        // Enter movie
+        movieImg.addEventListener('click', () => {
+            location.hash = "movie=" + item.id;
+        });
+
+        // Display error image
         movieImg.addEventListener('error', () => {
             movieImg.setAttribute('src', './src/images/robot_error.png');
             movieImg.setAttribute('alt', 'error-image-notfound');
           });
+
+        // Like button
+        const likeButton = document.createElement('button');
+        likeButton.classList.add('like__button');
+        likeButton.addEventListener('click', () =>{
+            likeButton.classList.toggle('like__button--on');
+        });
 
         if(lazyLoad){
             lazyLoader.observe(movieImg);
         };
 
         movieContainer.appendChild(movieImg);
+        movieContainer.appendChild(likeButton);
         container.appendChild(movieContainer);
-        });
+    });
 };
 
 function displayGenres (genres, container) {
