@@ -110,6 +110,7 @@ button {
 
 .movie__img {
   border-radius: 12px;
+  min-height: 175px;
 }
 
 .categoriesPreview__list, .categories__list {
@@ -274,6 +275,7 @@ button {
 
 .genericList__container .movie__container--img {
   width: 100%;
+  min-height: 175px;
 }
 
 
