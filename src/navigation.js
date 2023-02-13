@@ -1,3 +1,7 @@
+let maxPage;
+let page = 1;
+let infiniteScroll;
+
 searchFormButton.addEventListener('click', () => {
     location.hash = '#search=' + searchFormInput.value;
 });
@@ -8,18 +12,20 @@ trendingButton.addEventListener('click', () => {
 
 arrowButton.addEventListener('click', () => {
     location.hash = window.history.back();
-})
-// Scrolling to top
-function scroll(){
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-};
+});
 
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
+window.addEventListener('scroll', infiniteScroll, false);
 
 function navigator () {
     console.log({location})
+
+    if (infiniteScroll){
+        window.removeEventListener('scroll', infiniteScroll, {passive: false});
+        infiniteScroll = undefined;
+    };
+
     if(location.hash.startsWith('#trends')){
         trendsPage();
     } else if (location.hash.startsWith('#search=')){
@@ -30,9 +36,18 @@ function navigator () {
         categoryPage();
     } else {
         homePage();
-    }
+    };
     location.hash
-}
+
+    // Scrolling to top
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Asigning infiniteScroll a value
+    if(infiniteScroll){
+        window.addEventListener('scroll', infiniteScroll, {passive: false});
+    };
+};
 
 function trendsPage () {
     console.log('We are in Trends!');
@@ -52,9 +67,8 @@ function trendsPage () {
     headerGenresTitle.innerText = 'Trending';
 
     getFullTrendingMovies();
-
-    scroll();
-}
+    infiniteScroll = loadPaginatedTrendingMovies;
+};
 
 function searchPage () {
     console.log('We are in Search!');
@@ -75,8 +89,8 @@ function searchPage () {
     const [searchHash, query] = location.hash.split("=");
     getMoviesBySearch(query);
 
-    scroll();
-}
+    infiniteScroll = loadPaginatedSearchedMovies(query);
+};
 
 function moviePage () {
     console.log('We are in the Movie Details!');
@@ -96,9 +110,7 @@ function moviePage () {
     // [#movie, movieId]
     const [movieHash, movieId] = location.hash.split("=");
     getMovieInfo(movieId);
-
-    scroll();
-}
+};
 
 function categoryPage () {
     console.log('We are in Categories!');
@@ -124,8 +136,8 @@ function categoryPage () {
     headerGenresTitle.innerText = newCategoryName;
     getMoviesByCategory(categoryId);
 
-    scroll();
-}
+    infiniteScroll = loadPaginatedMoviesByCategory(categoryId);
+};
 
 function homePage () {
     console.log('Home');
@@ -144,5 +156,4 @@ function homePage () {
 
     getTrendingMoviesPreview();
     getCategoriesPreview();
-    scroll();
-}
+};
