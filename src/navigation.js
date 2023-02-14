@@ -98,7 +98,6 @@ function moviePage () {
     console.log('We are in the Movie Details!');
 
     headerSection.classList.add('header__container--long');
-    // headerSection.style.background='';
     arrowButton.classList.remove('inactive');
     arrowButton.classList.add('header__arrow--white');
     headerTitle.classList.add('inactive');

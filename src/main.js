@@ -280,6 +280,6 @@ async function getRelatedMovies (id){
 function getLikedMovies () {
     const likedMovies = likedMoviesList();
     const moviesArray = Object.values(likedMovies);
-
+    
     displayMovies(moviesArray, likedMoviesContainer, {lazyLoad:true, clean: true});
 }
