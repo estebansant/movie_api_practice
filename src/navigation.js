@@ -60,6 +60,7 @@ function trendsPage () {
     headerGenresTitle.classList.remove('inactive');
     searchForm.classList.add('inactive');
     trendingPreviewSection.classList.add('inactive');
+    likedMoviesSection.classList.add('inactive');
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
@@ -81,6 +82,7 @@ function searchPage () {
     headerGenresTitle.classList.add('inactive');
     searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.add('inactive');
+    likedMoviesSection.classList.add('inactive');
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
@@ -103,6 +105,7 @@ function moviePage () {
     headerGenresTitle.classList.add('inactive');
     searchForm.classList.add('inactive');
     trendingPreviewSection.classList.add('inactive');
+    likedMoviesSection.classList.add('inactive');
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
@@ -123,6 +126,7 @@ function categoryPage () {
     headerGenresTitle.classList.remove('inactive');
     searchForm.classList.add('inactive');
     trendingPreviewSection.classList.add('inactive');
+    likedMoviesSection.classList.add('inactive');
     genresPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
@@ -150,10 +154,12 @@ function homePage () {
     headerGenresTitle.classList.add('inactive');
     searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.remove('inactive');
+    likedMoviesSection.classList.remove('inactive');
     genresPreviewSection.classList.remove('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
 
     getTrendingMoviesPreview();
     getCategoriesPreview();
+    getLikedMovies();
 };

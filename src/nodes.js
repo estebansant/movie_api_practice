@@ -5,6 +5,7 @@ const trendingPreviewSection=document.querySelector('#trendingPreview');
 const genresPreviewSection=document.querySelector('#categoriesPreview');
 const genericSection=document.querySelector('#genericList');
 const movieDetailSection=document.querySelector('#movieDetail');
+const likedMoviesSection=document.querySelector('#liked');
 
 // Forms and containers
 const searchForm=document.querySelector('#searchForm');
@@ -12,6 +13,7 @@ const mainMoviesContainer=document.querySelector('.trendingPreview__movieList');
 const mainGenresContainer=document.querySelector('.categoriesPreview__list');
 const movieDetailGenresList=document.querySelector('#movieDetail .categories__list');
 const relatedMoviesContainer=document.querySelector('.relatedMovies__scrollContainer');
+const likedMoviesContainer=document.querySelector('.liked__movieList');
 
 // Elements
 const headerTitle=document.querySelector('.header__title');

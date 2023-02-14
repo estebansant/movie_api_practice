@@ -323,7 +323,7 @@ button {
   padding: 32px 24px;
   margin-top: 403px;
   z-index: 1;
-  position: absolute;
+  position: relative;
   background-color: var(--green-light-1);
 }
 
@@ -366,6 +366,7 @@ button {
   white-space: nowrap;
   width: calc(100vw - 24px);
   padding-bottom: 16px;
+  max-height: 210px;
 }
 
 .relatedMovies__scrollContainer .movie__container {
@@ -392,6 +393,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
+  position: relative;
+  bottom: 0;
 }
 
 footer p {
@@ -399,6 +403,7 @@ footer p {
   font-size: 2rem;
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-text2);
+  z-index: 1000;
 }
 
 
